@@ -17,13 +17,9 @@ This project visualizes protein structures using Jupyter Lab and py3Dmol.
 
 ## Project Structure
 
-- `requirements.txt`: Python dependencies.
-- `Dockerfile`: Container definition.
-- `docker-compose.yml`: (Optional) Simplifies container management.
-- `notebooks/protein_visualization.ipynb`: Example notebook to visualize protein structures using py3Dmol.
-
-## Usage
-
-Open the example notebook in Jupyter Lab to load and visualize protein structures.
+- `requirements.txt`: 
+- `Dockerfile`: 
+- `docker-compose.yml': 
+- `notebooks/protein_visualization.ipynb`: 
 
 Happy coding!
