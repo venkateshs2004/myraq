@@ -7,7 +7,7 @@ This project visualizes protein structures using Jupyter Lab and py3Dmol.
 1. **Clone this repository** to your local machine.
 2. **Navigate to the project folder**:
     cd protein_viz_docker
-3. **Build and run the Docker container**:
+3. ** Install Docker , Build and run the Docker container**:
 - Using Docker Compose:
   ```
   docker-compose up --build
