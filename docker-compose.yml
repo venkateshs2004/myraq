@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  protein_viz:
+    build: .
+    container_name: protein_viz_container
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app  # Mount the current directory into the container
+    environment:
+      - PYTHONUNBUFFERED=1
