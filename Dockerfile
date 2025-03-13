@@ -1,25 +1,26 @@
-# Use the latest stable Python image (you can change to 3.12 if desired)
-FROM python:3.12
+# Use a PyTorch image that includes CUDA (adjust version as needed)
+FROM pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime
 
-# Set working directory in the container
+
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements file to the container
+# Copy your requirements file into the container
 COPY requirements.txt .
 
-# Upgrade pip and install the dependencies
+# Upgrade pip and install dependencies
 RUN pip install --upgrade pip && \
-    pip install --no-cache-dir --timeout 500 -r requirements.txt
+    pip install --no-cache-dir --timeout 1000 -r requirements.txt
+    
 
-
-# Copy the rest of the project files into the container
+# Copy the rest of your project files into the container
 COPY . .
 
-# Expose port 8888 for Jupyter Lab
+# Expose a port (e.g., for Jupyter Lab)
 EXPOSE 8888
 
-# Set environment variable to run Python unbuffered (helps with logging)
+# Set an environment variable (optional)
 ENV PYTHONUNBUFFERED=1
 
-# Start Jupyter Lab when the container launches
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+# Start Jupyter Lab (or any command you prefer)
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--no-browser", "--allow-root"]
